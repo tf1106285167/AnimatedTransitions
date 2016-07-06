@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 
+#define KSCreenWidth [UIScreen mainScreen].bounds.size.width
+#define KSCreenHeight [UIScreen mainScreen].bounds.size.height
+
 @interface ViewController ()
 
 @property(nonatomic,strong)NSMutableArray *images;
@@ -23,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 20, KSCreenWidth, KSCreenHeight)];
     [self.view addSubview:_imageView];
     
     _imageView.image = [UIImage imageNamed:@"1.jpg"];
